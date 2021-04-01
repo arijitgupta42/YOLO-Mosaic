@@ -18,4 +18,4 @@ Output Mosaic Image        |  Output with BBoxes
 ![](assets/output.jpg)     |  ![](assets/output_box.jpg)
 
 > #### Auxiliary function modules
-The `dataset.py` function converts the given image and annotation directories into lists of images and their corresponding annotations. After which the `main.py` randomly samples 4 images from the dataset and passes it to the `update_image_and_anno.py` function which scales the four images and arranges them to fit in the desired output size and also changes the annotaion values accordingly.
+The `dataset.py` function converts the given image and annotation directories into lists of images and their corresponding annotations. After which the `main.py` randomly samples 4 images from the dataset and passes it to the `mosaic.py` function which scales the four images and arranges them to fit in the desired output size and also changes the annotaion values accordingly.

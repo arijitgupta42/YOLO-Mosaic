@@ -19,3 +19,5 @@ Output Mosaic Image        |  Output with BBoxes
 
 > #### Auxiliary function modules
 The `dataset.py` function converts the given image and annotation directories into lists of images and their corresponding annotations. After which the `main.py` randomly samples 4 images from the dataset and passes it to the `mosaic.py` function which scales the four images and arranges them to fit in the desired output size and also changes the annotaion values accordingly.
+
+> ##### Heavily inspired from [this code](https://github.com/jason9075/opencv-mosaic-data-aug) which did not support YOLO style annotations 

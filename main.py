@@ -6,8 +6,8 @@ import glob
 import numpy as np
 from PIL import Image
 
-from get_dataset import get_dataset
-from update_image_and_anno import update_image_and_anno
+from dataset import dataset
+from mosaic import mosaic
 
 OUTPUT_SIZE = (600, 600)  # Height, Width
 SCALE_RANGE = (0.3, 0.7)
@@ -22,14 +22,14 @@ category_name = ['aeroplane','bicycle','bird','boat','bottle','bus','car','cat',
 
 # Change the output path of the imwrite commands to wherever you want to get both the mosaic image and the image with boxes
 def main():
-    img_paths, annos = get_dataset(ANNO_DIR, IMG_DIR)
+    img_paths, annos = dataset(ANNO_DIR, IMG_DIR)
 
     idxs = random.sample(range(len(annos)), 4)
 
-    new_image, new_annos = update_image_and_anno(img_paths, annos,
-                                                 idxs,
-                                                 OUTPUT_SIZE, SCALE_RANGE,
-                                                 filter_scale=FILTER_TINY_SCALE)
+    new_image, new_annos = mosaic(img_paths, annos,
+    	                          idxs,
+    	                          OUTPUT_SIZE, SCALE_RANGE,
+    	                          filter_scale=FILTER_TINY_SCALE)
 
     cv2.imwrite('output.jpg', new_image) #The mosaic image
     for anno in new_annos:

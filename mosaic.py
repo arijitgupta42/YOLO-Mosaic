@@ -6,7 +6,7 @@ import glob
 import numpy as np
 from PIL import Image
 
-def update_image_and_anno(all_img_list, all_annos, idxs, output_size, scale_range, filter_scale=0.):
+def mosaic(all_img_list, all_annos, idxs, output_size, scale_range, filter_scale=0.):
     output_img = np.zeros([output_size[0], output_size[1], 3], dtype=np.uint8)
     scale_x = scale_range[0] + random.random() * (scale_range[1] - scale_range[0])
     scale_y = scale_range[0] + random.random() * (scale_range[1] - scale_range[0])

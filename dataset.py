@@ -11,7 +11,7 @@ def file_len(fname):
             pass
     return i + 1
 
-def get_dataset(anno_dir, img_dir):
+def dataset(anno_dir, img_dir):
     img_paths = []
     annos = []
     for anno_file in glob.glob(os.path.join(anno_dir, '*.txt')):
